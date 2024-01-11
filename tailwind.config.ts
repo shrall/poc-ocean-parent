@@ -57,6 +57,7 @@ const config = {
             20: "#009649",
           },
           orange: "#F37C30",
+          yellow: "#FFBC0D",
         },
       },
       keyframes: {
