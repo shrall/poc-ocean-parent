@@ -1,3 +1,4 @@
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 
@@ -9,7 +10,9 @@ import { useTokenStore } from '@/store/useTokenStore';
 
 const Index = dynamic(() => import('ocean_home/index'), { ssr: false });
 
-export default function Home() {
+export default function Home({
+  cookiesToken,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { token, setToken } = useTokenStore();
 
   useEffect(() => {
@@ -28,9 +31,16 @@ export default function Home() {
     <Layout>
       <Seo templateTitle='Home' siteName='Ocean by BCA' />
       <div className='w-full'>
-        <Header title='Home' />
-        <Index />
+        <Header title={cookiesToken as string} />
+        <Index cookiesToken={cookiesToken} />
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const cookiesToken = context.req.cookies.token;
+  return {
+    props: { cookiesToken },
+  };
 }
