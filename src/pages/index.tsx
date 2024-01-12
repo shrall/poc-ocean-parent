@@ -31,7 +31,7 @@ export default function Home({
     <Layout>
       <Seo templateTitle='Home' siteName='Ocean by BCA' />
       <div className='w-full'>
-        <Header title={cookiesToken as string} />
+        <Header title='Home' />
         <Index cookiesToken={cookiesToken} />
       </div>
     </Layout>
