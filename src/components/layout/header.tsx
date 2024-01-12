@@ -11,7 +11,10 @@ function Header({ title }: { title: string }) {
         <div className='flex items-center gap-x-6'>
           <Icon icon='notification' fill='ocean-primary-30' />
           <Avatar className='size-12'>
-            <AvatarImage src='https://github.com/shrall.png' />
+            <AvatarImage
+              className='rounded-full'
+              src='https://github.com/shrall.png'
+            />
             <AvatarFallback>MO</AvatarFallback>
           </Avatar>
         </div>

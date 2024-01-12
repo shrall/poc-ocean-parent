@@ -1,19 +1,19 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const NextFederationPlugin = require("@module-federation/nextjs-mf");
+const NextFederationPlugin = require('@module-federation/nextjs-mf');
 
 module.exports = {
   webpack(config, options) {
     const { isServer } = options;
     config.plugins.push(
       new NextFederationPlugin({
-        name: "ocean_root",
+        name: 'ocean_parent',
         remotes: {
           //NOTE - Add the remote projects here
-          ocean_child: `ocean_child@http://localhost:3001/_next/static/${
-            isServer ? "ssr" : "chunks"
+          ocean_home: `ocean_home@http://localhost:3001/_next/static/${
+            isServer ? 'ssr' : 'chunks'
           }/remoteEntry.js`,
         },
-        filename: "static/chunks/remoteEntry.js",
+        filename: 'static/chunks/remoteEntry.js',
         exposes: {
           //NOTE - Expose the components here
           // "./button": "./src/components/ui/button.tsx",
