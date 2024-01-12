@@ -16,7 +16,7 @@ module.exports = {
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
           //NOTE - Expose the components here
-          // "./button": "./src/components/ui/button.tsx",
+          './store/useTokenStore': './src/store/useTokenStore.ts',
         },
         shared: {
           //NOTE - Add the shared dependencies here

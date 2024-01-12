@@ -28,7 +28,8 @@
     "react-dom": "^18",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
-    "webpack": "^5.89.0"
+    "webpack": "^5.89.0",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
