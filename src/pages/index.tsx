@@ -18,7 +18,7 @@ export default function Home({
   useEffect(() => {
     //NOTE - Localstorage
     const randomNumber = Math.floor(Math.random() * 1000000000);
-    if (localStorage.getItem('token') === '') {
+    if (localStorage.getItem('token') === null) {
       localStorage.setItem('token', `${randomNumber}-localstorage`);
     }
     //NOTE - Zustand
@@ -39,7 +39,7 @@ export default function Home({
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const cookiesToken = context.req.cookies.token;
+  const cookiesToken = context.req.cookies.token || '';
   return {
     props: { cookiesToken },
   };

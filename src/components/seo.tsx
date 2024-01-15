@@ -98,7 +98,6 @@ const favicons: Array<React.ComponentPropsWithoutRef<'link'>> = [
     sizes: '32x32',
     href: '/favicon/favicon-32x32.png',
   },
-  { rel: 'manifest', href: '/favicon/site.webmanifest' },
   {
     rel: 'mask-icon',
     href: '/favicon/safari-pinned-tab.svg',
